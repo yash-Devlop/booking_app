@@ -1,9 +1,12 @@
 const mysql = require('mysql2/promise');
+require('dotenv').config()
+
+const pass = process.env.DB_PASS
 
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: process.env.DB_PASS,
+  password: pass,
   database: 'activities_booking_app',
 });
 
